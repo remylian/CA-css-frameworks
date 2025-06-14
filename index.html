@@ -1,93 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Login or register to access the My Little App social feed. Light and dark mode supported." />
+    <meta
+      name="description"
+      content="Login or register to access the My Little App social feed. Light and dark mode supported."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login / Register</title>
     <link href="/css/style.css" rel="stylesheet" />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <script type="module" src="/js/main.js" defer></script>
   </head>
-  <body class="h-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col">
+  <body
+    class="flex h-full flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
+  >
+    <header class="bg-white shadow-md dark:bg-gray-800">
+      <div class="mx-auto max-w-5xl flex-col px-4 py-4">
+        <h1 class="mb-2 text-center text-xl font-bold">
+          Welcome to my little App
+        </h1>
 
-    <header class="bg-white dark:bg-gray-800 shadow-md">
-      <div class="flex-col max-w-5xl mx-auto px-4 py-4">
-        <h1 class="text-xl font-bold text-center mb-2">Welcome to my little App</h1>
-        
-        <nav class="flex justify-evenly w-full text-sm font-medium gap-2">
-          <a href="/index.html" class="text-blue-600 dark:text-blue-400 underline font-semibold">Login</a>
-          <a href="/feed/index.html" class="text-gray-600 dark:text-gray-300 hover:underline">Feed</a>
-          <a href="/profile/index.html" class="text-gray-600 dark:text-gray-300 hover:underline">Profile</a>
+        <nav class="flex w-full justify-evenly gap-2 text-sm font-medium">
+          <a
+            href="/index.html"
+            class="font-semibold text-blue-600 underline dark:text-blue-400"
+            >Login</a
+          >
+          <a
+            href="/feed/index.html"
+            class="text-gray-600 hover:underline dark:text-gray-300"
+            >Feed</a
+          >
+          <a
+            href="/profile/index.html"
+            class="text-gray-600 hover:underline dark:text-gray-300"
+            >Profile</a
+          >
         </nav>
-        <button id="toggleTheme" class=" block mx-auto text-sm border px-2 py-1 rounded dark:bg-gray-700  mt-4">Toggle Light/Dark mode</button>
+        <button
+          id="toggleTheme"
+          class="mx-auto mt-4 block rounded border px-2 py-1 text-sm dark:bg-gray-700"
+        >
+          Toggle Light/Dark mode
+        </button>
       </div>
     </header>
-    
-    <main class="flex-grow flex items-center justify-center p-4">
-      <div class="w-full max-w-md space-y-6 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-        <div class="flex justify-between items-center">
+
+    <main class="flex flex-grow items-center justify-center p-4">
+      <div
+        class="w-full max-w-md space-y-6 rounded-xl bg-white p-6 shadow-lg dark:bg-gray-800"
+      >
+        <div class="flex items-center justify-between">
           <h2 class="text-2xl font-bold">Login</h2>
-          
         </div>
 
-        <form id="authForm" action="/profile" method="POST" class="space-y-4" novalidate>
+        <form
+          id="authForm"
+          action="/profile"
+          method="POST"
+          class="space-y-4"
+          novalidate
+        >
           <!-- Email -->
           <div>
-            <label for="email" class="block text-sm font-medium mb-1">Email address</label>
+            <label for="email" class="mb-1 block text-sm font-medium"
+              >Email address</label
+            >
             <input
               id="email"
               name="email"
               type="email"
               required
               pattern="^[a-zA-Z0-9._%+-]+@noroff\.no$"
-              class="w-full border rounded px-3 py-2 dark:bg-gray-700 dark:border-gray-600
-                     focus:outline-none transition"
+              class="w-full rounded border px-3 py-2 transition focus:outline-none dark:border-gray-600 dark:bg-gray-700"
               placeholder="valid noroff.no email"
             />
-            <p id="emailError" class="mt-1 text-sm text-red-600 hidden">Please enter a valid @noroff.no email.</p>
+            <p id="emailError" class="mt-1 hidden text-sm text-red-600">
+              Please enter a valid @noroff.no email.
+            </p>
           </div>
 
           <!-- Password -->
           <div>
-            <label for="password" class="block text-sm font-medium mb-1">Password</label>
+            <label for="password" class="mb-1 block text-sm font-medium"
+              >Password</label
+            >
             <input
               id="password"
               name="password"
               type="password"
               required
               minlength="8"
-              class="w-full border rounded px-3 py-2 dark:bg-gray-700 dark:border-gray-600
-                     focus:outline-none transition"
+              class="w-full rounded border px-3 py-2 transition focus:outline-none dark:border-gray-600 dark:bg-gray-700"
               placeholder="At least 8 characters"
             />
-            <p id="passwordError" class="mt-1 text-sm text-red-600 hidden">Password must be at least 8 characters.</p>
+            <p id="passwordError" class="mt-1 hidden text-sm text-red-600">
+              Password must be at least 8 characters.
+            </p>
           </div>
 
           <!-- Feedback Messages -->
-          <p id="formError" class="text-sm text-red-600 mt-2 transition-opacity duration-300 opacity-0 invisible">
+          <p
+            id="formError"
+            class="invisible mt-2 text-sm text-red-600 opacity-0 transition-opacity duration-300"
+          >
             Please submit valid credentials.
           </p>
-          <p id="formSuccess" class="text-sm text-green-600 mt-2 hidden">
+          <p id="formSuccess" class="mt-2 hidden text-sm text-green-600">
             Login successful! Redirecting…
           </p>
 
           <!-- Submit Button -->
           <button
             type="submit"
-            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            class="w-full rounded bg-blue-600 py-2 text-white hover:bg-blue-700"
           >
             Submit
           </button>
 
           <!-- Loading Animation -->
-          <div id="loadingSpinner" class="mt-4 h-4 w-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded animate-pulse hidden"></div>
-
+          <div
+            id="loadingSpinner"
+            class="mt-4 hidden h-4 w-full animate-pulse rounded bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
+          ></div>
         </form>
       </div>
     </main>
-     <!-- Footer -->
-    <footer class="mt-auto bg-white dark:bg-gray-800 text-center py-2 text-sm text-gray-500 dark:text-gray-400 shadow-inner">
+    <!-- Footer -->
+    <footer
+      class="mt-auto bg-white py-2 text-center text-sm text-gray-500 shadow-inner dark:bg-gray-800 dark:text-gray-400"
+    >
       &copy; 2025 My Little App
     </footer>
   </body>

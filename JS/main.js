@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
       { inputId: "password", errorId: "passwordError" },
     ],
     "authForm",
-    "formError"
+    "formError",
   );
 });

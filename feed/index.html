@@ -1,37 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Browse the latest posts, create new content, and search through the My Little App social feed." />
+    <meta
+      name="description"
+      content="Browse the latest posts, create new content, and search through the My Little App social feed."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feed</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link href="/css/style.css" rel="stylesheet" />
     <script type="module" src="/js/main.js" defer></script>
   </head>
-  <body class="h-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col">
-
+  <body
+    class="flex h-full flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
+  >
     <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-md">
-      <div class="max-w-5xl mx-auto px-4 py-4">
-        <h1 class="text-xl font-bold text-center mb-2">Social Feed</h1>
-        <nav class="flex justify-evenly w-full text-sm font-medium gap-2">
-          <a href="/index.html" class="text-gray-600 dark:text-gray-300 hover:underline">Login</a>
-          <a href="/feed/index.html" class="text-blue-600 dark:text-blue-400 underline font-semibold">Feed</a>
-          <a href="/profile/index.html" class="text-gray-600 dark:text-gray-300 hover:underline">Profile</a>
+    <header class="bg-white shadow-md dark:bg-gray-800">
+      <div class="mx-auto max-w-5xl px-4 py-4">
+        <h1 class="mb-2 text-center text-xl font-bold">Social Feed</h1>
+        <nav class="flex w-full justify-evenly gap-2 text-sm font-medium">
+          <a
+            href="/index.html"
+            class="text-gray-600 hover:underline dark:text-gray-300"
+            >Login</a
+          >
+          <a
+            href="/feed/index.html"
+            class="font-semibold text-blue-600 underline dark:text-blue-400"
+            >Feed</a
+          >
+          <a
+            href="/profile/index.html"
+            class="text-gray-600 hover:underline dark:text-gray-300"
+            >Profile</a
+          >
         </nav>
-        <button id="toggleTheme" class=" block mx-auto text-sm border px-2 py-1 rounded dark:bg-gray-700 mt-4">Toggle Light/Dark Mode</button>
+        <button
+          id="toggleTheme"
+          class="mx-auto mt-4 block rounded border px-2 py-1 text-sm dark:bg-gray-700"
+        >
+          Toggle Light/Dark Mode
+        </button>
       </div>
     </header>
 
     <!-- Main -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 py-6 space-y-6">
-      
+    <main class="mx-auto max-w-5xl flex-grow space-y-6 px-4 py-6">
       <!-- Search + Sort -->
-      <section class="flex flex-col sm:flex-row gap-4 items-center justify-between">
-        <input type="search" placeholder="Search posts..."
-          class="w-full sm:w-2/3 px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600 focus:outline-none" />
-        <select class="px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600 focus:outline-none">
+      <section
+        class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+      >
+        <input
+          type="search"
+          placeholder="Search posts..."
+          class="w-full rounded border px-3 py-2 focus:outline-none dark:border-gray-600 dark:bg-gray-700 sm:w-2/3"
+        />
+        <select
+          class="rounded border px-3 py-2 focus:outline-none dark:border-gray-600 dark:bg-gray-700"
+        >
           <option>Sort by Date</option>
           <option>Sort by Author</option>
           <option>Sort by Popularity</option>
@@ -39,60 +66,71 @@
       </section>
 
       <!-- Post Creation Form (collapsible) -->
-<section class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-  <details  class="space-y-4">
-    <summary class="text-center cursor-pointer font-semibold text-lg mb-2 hover:underline focus:outline-none  list-none">Create a New Post</summary>
+      <section class="rounded bg-white p-4 shadow dark:bg-gray-800">
+        <details class="space-y-4">
+          <summary
+            class="mb-2 cursor-pointer list-none text-center text-lg font-semibold hover:underline focus:outline-none"
+          >
+            Create a New Post
+          </summary>
 
-    <form id="postForm" class="space-y-4" novalidate>
+          <form id="postForm" class="space-y-4" novalidate>
+            <label for="postTitle" class="sr-only hidden">Title</label>
+            <input
+              id="postTitle"
+              type="text"
+              placeholder="Post title"
+              class="w-full rounded border px-3 py-2 transition focus:outline-none dark:border-gray-600 dark:bg-gray-700"
+            />
 
-      <label for="postTitle" class="sr-only hidden">Title</label>
-<input
-  id="postTitle"
-  type="text"
-  placeholder="Post title"
-  class="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600 focus:outline-none transition"
-/>
+            <label for="postImage" class="sr-only hidden">Image</label>
+            <input
+              id="postImage"
+              type="url"
+              placeholder="Image URL"
+              class="w-full rounded border px-3 py-2 transition focus:outline-none dark:border-gray-600 dark:bg-gray-700"
+            />
 
-<label for="postImage" class="sr-only hidden">Image</label>
-<input
-  id="postImage"
-  type="url"
-  placeholder="Image URL"
-  class="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600 focus:outline-none transition"
-/>
+            <label for="postContent" class="sr-only hidden">Post Content</label>
+            <textarea
+              id="postContent"
+              rows="3"
+              placeholder="Write your post..."
+              class="w-full rounded border px-3 py-2 transition focus:outline-none dark:border-gray-600 dark:bg-gray-700"
+            ></textarea>
 
-<label for="postContent" class="sr-only hidden">Post Content</label>
-<textarea
-  id="postContent"
-  rows="3"
-  placeholder="Write your post..."
-  class="w-full px-3 py-2 rounded border dark:bg-gray-700 dark:border-gray-600 focus:outline-none transition"
-></textarea>
-
-
-      <button type="submit"class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Post</button>
-    </form>
-  </details>
-</section>
-
+            <button
+              type="submit"
+              class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            >
+              Post
+            </button>
+          </form>
+        </details>
+      </section>
 
       <h2 class="text-center text-xl">Posts</h2>
       <!-- Skeleton Loader -->
-      <section id="postSkeleton" class="grid gap-6 sm:grid-cols-2 animate-pulse">
-        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow space-y-2">
-          <div class="h-48 bg-gray-300 dark:bg-gray-700 rounded"></div>
-          <div class="h-4 w-2/3 bg-gray-300 dark:bg-gray-700 rounded"></div>
-          <div class="h-3 w-full bg-gray-300 dark:bg-gray-700 rounded"></div>
+      <section
+        id="postSkeleton"
+        class="grid animate-pulse gap-6 sm:grid-cols-2"
+      >
+        <div class="space-y-2 rounded bg-white p-4 shadow dark:bg-gray-800">
+          <div class="h-48 rounded bg-gray-300 dark:bg-gray-700"></div>
+          <div class="h-4 w-2/3 rounded bg-gray-300 dark:bg-gray-700"></div>
+          <div class="h-3 w-full rounded bg-gray-300 dark:bg-gray-700"></div>
         </div>
-        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow space-y-2">
-          <div class="h-48 bg-gray-300 dark:bg-gray-700 rounded"></div>
-          <div class="h-4 w-1/2 bg-gray-300 dark:bg-gray-700 rounded"></div>
-          <div class="h-3 w-5/6 bg-gray-300 dark:bg-gray-700 rounded"></div>
+        <div class="space-y-2 rounded bg-white p-4 shadow dark:bg-gray-800">
+          <div class="h-48 rounded bg-gray-300 dark:bg-gray-700"></div>
+          <div class="h-4 w-1/2 rounded bg-gray-300 dark:bg-gray-700"></div>
+          <div class="h-3 w-5/6 rounded bg-gray-300 dark:bg-gray-700"></div>
         </div>
       </section>
     </main>
-     <!-- Footer -->
-    <footer class="mt-auto bg-white dark:bg-gray-800 text-center py-2 text-sm text-gray-500 dark:text-gray-400 shadow-inner">
+    <!-- Footer -->
+    <footer
+      class="mt-auto bg-white py-2 text-center text-sm text-gray-500 shadow-inner dark:bg-gray-800 dark:text-gray-400"
+    >
       &copy; 2025 My Little App
     </footer>
   </body>

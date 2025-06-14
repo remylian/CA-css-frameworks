@@ -1,4 +1,8 @@
-export function initFormValidation(fields = [], formId = "authForm", formErrorId = "formError") {
+export function initFormValidation(
+  fields = [],
+  formId = "authForm",
+  formErrorId = "formError",
+) {
   const form = document.getElementById(formId);
   const formError = document.getElementById(formErrorId);
   const formSuccess = document.getElementById("formSuccess");
@@ -33,7 +37,7 @@ export function initFormValidation(fields = [], formId = "authForm", formErrorId
           "ring-red-500",
           "border-green-500",
           "ring-green-500",
-          "ring-2"
+          "ring-2",
         );
       }
     };
