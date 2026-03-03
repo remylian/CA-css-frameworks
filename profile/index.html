@@ -1,124 +1,61 @@
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
-    <meta
-      name="description"
-      content="View your profile, see follower stats, and revisit your pirate-themed adventures on My Little App."
-    />
     <meta charset="UTF-8" />
+    <meta name="description"
+      content="View your profile, see follower stats, and revisit your pirate-themed adventures on My Little App." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile | My Little App</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link href="/css/style.css" rel="stylesheet" />
-    <script type="module" src="/js/main.js" defer></script>
+
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="module" src="../js/main.js" defer></script>
   </head>
 
-  <body
-    class="flex min-h-screen flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
-  >
-    <!-- Header -->
+  <body class="flex min-h-screen flex-col bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
     <header class="bg-white shadow-md dark:bg-gray-800">
       <div class="mx-auto max-w-5xl px-4 py-4">
         <h1 class="mb-2 text-center text-xl font-bold">My Profile</h1>
+
         <nav class="flex w-full justify-evenly gap-2 text-sm font-medium">
-          <a
-            href="/index.html"
-            class="text-gray-600 hover:underline dark:text-gray-300"
-            >Login</a
-          >
-          <a
-            href="/feed/index.html"
-            class="text-gray-600 hover:underline dark:text-gray-300"
-            >Feed</a
-          >
-          <a
-            href="/profile/index.html"
-            class="font-semibold text-blue-600 underline dark:text-blue-400"
-            >Profile</a
-          >
+          <a href="../index.html" class="text-gray-600 hover:underline dark:text-gray-300">Login</a>
+          <a href="../feed/index.html" class="text-gray-600 hover:underline dark:text-gray-300">Feed</a>
+          <a href="./index.html" class="font-semibold text-blue-600 underline dark:text-blue-400">Profile</a>
         </nav>
+
         <button
-  id="toggleTheme"
-  aria-pressed="false"
-  class="mx-auto mt-4 block rounded border px-2 py-1 text-sm dark:bg-gray-700"
->
-  Toggle theme
-</button>
+          id="toggleTheme"
+          aria-pressed="false"
+          class="mx-auto mt-4 block rounded border px-2 py-1 text-sm dark:bg-gray-700"
+        >
+          Toggle theme
+        </button>
       </div>
     </header>
 
-    <!-- Main -->
     <main class="mx-auto max-w-5xl flex-grow space-y-8 px-4 py-6">
-      <!-- Banner and Profile Info -->
       <section class="space-y-4">
-        <img
-          src="../images/piratebanner.jpg"
-          alt="jolly roger pirate flag"
-          class="h-auto w-full rounded object-cover"
-        />
+        <img src="../images/piratebanner.jpg" alt="jolly roger pirate flag"
+          class="h-auto w-full rounded object-cover" />
+
         <div class="flex flex-col items-center space-y-2">
-          <img
-            src="../images/kaptein.jpg"
-            alt="User avatar"
-            class="h-24 w-24 rounded-full ring-4 ring-yellow-800 dark:ring-yellow-800"
-          />
+          <img src="../images/kaptein.jpg" alt="User avatar"
+            class="h-24 w-24 rounded-full ring-4 ring-yellow-800" />
+
           <h2 class="text-2xl font-semibold">The Captain</h2>
           <div class="text-sm text-gray-600 dark:text-gray-300">
             <span class="font-semibold">123</span> Followers ·
             <span class="font-semibold">78</span> Following
           </div>
-          <button
-            class="rounded bg-blue-600 px-4 py-1 text-sm text-white hover:bg-blue-700"
-          >
+
+          <button class="rounded bg-blue-600 px-4 py-1 text-sm text-white hover:bg-blue-700">
             Follow
           </button>
         </div>
       </section>
-
-      <!-- User Posts -->
-      <section class="space-y-4">
-        <h3 class="text-center text-xl font-semibold">Captain's Log</h3>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <!-- Post Card -->
-          <article
-            class="space-y-2 rounded bg-white p-4 shadow dark:bg-gray-800"
-          >
-            <h4 class="text-center text-2xl font-semibold">On the Hunt!</h4>
-            <img
-              src="../images/treasurehunt.jpg"
-              alt="The Captain holding a map upside down"
-              class="h-25 rounded object-cover"
-            />
-            <p class="text-sm text-gray-600 dark:text-gray-400">
-              We've Found it! the map to the great treasure of Cpt.Threepwood
-              himself!
-            </p>
-          </article>
-          <article
-            class="space-y-2 rounded bg-white p-4 shadow dark:bg-gray-800"
-          >
-            <h4 class="text-center text-2xl font-semibold">
-              Here be Treasure!
-            </h4>
-            <img
-              src="../images/hereBeTreasure.jpg"
-              alt="The pirates excitedly looking at something in the distance"
-              class="rounded"
-            />
-            <p class="text-sm text-gray-600 dark:text-gray-400">
-              Finally! After years of searching, we set our course straight
-              (turns out the map was upside down the whole time!) and can see
-              our destination on the horizon! Onward to great riches!
-            </p>
-          </article>
-        </div>
-      </section>
     </main>
 
-    <!-- Footer -->
-    <footer
-      class="mt-auto bg-white py-2 text-center text-sm text-gray-500 shadow-inner dark:bg-gray-800 dark:text-gray-400"
-    >
+    <footer class="mt-auto bg-white py-2 text-center text-sm text-gray-500 shadow-inner dark:bg-gray-800 dark:text-gray-400">
       &copy; 2025 My Little App
     </footer>
   </body>
